@@ -1,7 +1,44 @@
-.App {
-  text-align: center;
+.Contact_form {
+  background-color: #2C2E43;
+  padding : 5px;
+  margin : 5px;
+  border-color : white;
+  border-width: 1px;
+  border-radius : 10px;
 }
 
+.App {
+  text-align: center;
+  width : 85%;
+  margin : auto;
+}
+.chat {
+  position:  fixed;
+  bottom: 0;
+  right: 0;
+  display: inline-block;
+}
+
+.slider-size{
+  text-align: center;
+  width : 92%;
+  margin : auto;
+}
+
+.align-right{
+  text-align: right;
+}
+
+.padding{
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+
+.smallpadding{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +72,182 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.divcontent{
+  background-color: #444444;
+  border-radius:25px;
+  width:90%;
+  padding:2%;
+  margin:2%;
+
+}
+.divmap{
+  width: 35.5%;
+  margin : auto;
+  border-radius:25px;
+}
+
+.contentimg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imgdiv{
+  border-radius: 15px;
+  height:200px;
+  width:auto;
+  margin:auto;
+}
+
+.imgbooks{
+  width: 200px;
+  height:auto;
+}
+
+.profilpicture{
+  width: 400px;
+  height:auto;
+  display: flex;
+  border-radius:25px;
+  margin:auto;
+}
+.divcontent:hover{
+  background-color: #AAAAAA;
+}
+
+
+
+.form-range{
+  background-color: black;
+}
+
+.tree,
+.tree ul,
+.tree li {
+    list-style: none;
+    margin: auto;
+    padding: 0;
+    position: relative;
+}
+
+.tree {
+    text-align: center;
+}
+
+.tree,
+.tree ul {
+    display: table;
+}
+
+.tree ul {
+    width: 100%;
+}
+
+.tree li {
+    display: table-cell;
+    padding: .5em 0;
+    vertical-align: top;
+}
+
+.tree li:before {
+    outline: solid 1px white;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.tree li:first-child:before {
+    left: 50%;
+}
+
+.tree li:last-child:before {
+    right: 50%;
+}
+
+.tree code,
+.tree a {
+    border: solid .1em white;
+    border-radius: .2em;
+    display: inline-block;
+    margin: 0 .2em .5em;
+    padding: .2em .5em;
+    position: relative;
+}
+
+.tree ul:before,
+.tree code:before,
+.tree a:before {
+    outline: solid 1px white;
+    content: "";
+    height: .5em;
+    left: 50%;
+    position: absolute;
+}
+
+.tree ul:before {
+    top: -.5em;
+}
+
+.tree code:before,
+.tree a:before {
+    top: -.55em;
+}
+
+.tree>li {
+    margin-top: 0;
+}
+
+.tree>li:before,
+.tree>li:after,
+.tree>li>code:before,
+.tree>li>a:before {
+    outline: none;
+}
+.tree li a:hover,
+.tree li a:hover+ul li a {
+	background: white;
+  color: black;
+  border: 1px solid white;
+}
+
+.tree li a:hover + ul li::after,
+.tree li a:hover + ul li::before,
+.tree li a:hover + ul::before,
+.tree li a:hover + ul ul::before{
+	border-color:  white;
+}
+
+a:link, a:visited  {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+
+.learning-options-container {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.learning-option-button {
+  padding: 0.5rem;
+  border-radius: 25px;
+  background: transparent;
+  border: 1px solid green;
+  margin: 3px;
+}
+
+
+h1, .align{
+  text-align: center;
+}
+body{
+  background-color: black;
+  color : white;
+  width : 85%;
+  margin : auto;
 }

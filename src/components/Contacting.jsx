@@ -12,15 +12,15 @@ const Contacting = (props) => {
   }
 
   const options = [
-    { text: "Contacting 📩", handler:  props.actionProvider.SayingHello , id: 1 },
-    { text: "Go back", handler: props.actionProvider.SayingHello, id: 2 },
+    { text: "Contacting 📩", handler:  () => Click_contacted() , id: 1 },
+    { text: "Go back", handler: props.actionProvider.GoingBack, id: 2 },
   ];
 
   const optionsMarkup = options.map((option) => (
     <button
-      className="contact-option-button"
+      className="learning-option-button"
       key={option.id}
-      onClick={() => Click_contacted()}
+      onClick={option.handler}
     >
       {option.text}
     </button>

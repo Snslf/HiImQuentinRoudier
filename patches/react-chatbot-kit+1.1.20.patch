@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-chatbot-kit/src/components/ChatbotMessage/ChatBotMessageAvatar/ChatbotMessageAvatar.jsx b/node_modules/react-chatbot-kit/src/components/ChatbotMessage/ChatBotMessageAvatar/ChatbotMessageAvatar.jsx
+index ea73807..826284c 100644
+--- a/node_modules/react-chatbot-kit/src/components/ChatbotMessage/ChatBotMessageAvatar/ChatbotMessageAvatar.jsx
++++ b/node_modules/react-chatbot-kit/src/components/ChatbotMessage/ChatBotMessageAvatar/ChatbotMessageAvatar.jsx
+@@ -4,7 +4,7 @@ const ChatbotMessageAvatar = () => {
+   return (
+     <div className="react-chatbot-kit-chat-bot-avatar">
+       <div className="react-chatbot-kit-chat-bot-avatar-container">
+-        <p className="react-chatbot-kit-chat-bot-avatar-letter">B</p>
++        <p className="react-chatbot-kit-chat-bot-avatar-letter">Q</p>
+       </div>
+     </div>
+   );

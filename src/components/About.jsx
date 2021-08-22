@@ -5,6 +5,8 @@ import Header from "./Header";
 import FavoriteBooks from "./FavoriteBooks";
 import EntomologyTree from "./EntomologyTree";
 import Contacting from "./Contacting";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import me from "./images/Me.png";
 
 import fhaz from "./images/FHAZ.png"
@@ -135,19 +137,19 @@ function About() {
     return(
       <div class= "App">
         <h4>The pictures taken on the {photodata.photos[num_order].earth_date}</h4>
-        <button type="button" class="btn btn-dark btn-lg btn-block" onClick={() => order_pic(-25, photodata.photos.length)}><h4>⏪</h4></button>
-        <button type="button" class="btn btn-dark btn-lg btn-block" onClick={() => order_pic(-1, photodata.photos.length)}><h4>◀️</h4></button>
+        <button type="button" class="btn button-yellow button-change-yellow btn-lg btn-block" onClick={() => order_pic(-25, photodata.photos.length)}><FontAwesomeIcon icon={faAngleDoubleLeft} /></button>
+        <button type="button" class="btn button-yellow button-change-yellow btn-lg btn-block" onClick={() => order_pic(-1, photodata.photos.length)}><FontAwesomeIcon icon={faAngleLeft} /></button>
         <a> Image {num_order + 1}/{photodata.photos.length}</a>
-        <button type="button" class="btn btn-dark btn-lg btn-block" onClick={() => order_pic(1, photodata.photos.length)}><h4>▶️</h4></button>
-        <button type="button" class="btn btn-dark btn-lg btn-block" onClick={() => order_pic(25, photodata.photos.length)}><h4>⏩</h4></button>
+        <button type="button" class="btn button-yellow button-change-yellow btn-lg btn-block" onClick={() => order_pic(1, photodata.photos.length)}><FontAwesomeIcon icon={faAngleRight} /></button>
+        <button type="button" class="btn button-yellow button-change-yellow btn-lg btn-block" onClick={() => order_pic(25, photodata.photos.length)}><FontAwesomeIcon icon={faAngleDoubleRight} /></button>
         <div class="row">
-          <div class = "col d-grid gap-2">
+          <div class = "col d-grid gap-2 border-yellow">
             <img
               src={photodata.photos[num_order].img_src}
               alt = {photodata.photos[num_order].img_src}
               class = "profilpicture" />
           </div>
-          <div class = "col d-grid gap-2">
+          <div class = "col d-grid gap-2 border-yellow">
             <a>{photodata.photos[num_order].camera.full_name} ({photodata.photos[num_order].camera.name})</a>
             {photodata.photos[num_order].camera.name === "FHAZ" &&
             <div>
@@ -220,7 +222,7 @@ function About() {
   return (
     <div>
       <Header />
-      <div class="container padding">
+      <div class="container padding width-page">
         <div class="row">
           <div class="col">
             <img class="picture profilpicture"
@@ -228,7 +230,7 @@ function About() {
              alt="My face, you really miss something :("/>
           </div>
           <div class="col">
-            <h3> Hello! I'm Quentin, a former robotics and mechatronics engineer wanting now to work in the world of the  development.</h3>
+            <h3> Hello! I'm Quentin, a former robotics and mechatronics engineer who decided to work in IT.</h3>
             <br/>
             <p> After working on different subjects in different types of companies, I understood that the part I prefered in engineering was coding.</p>
             <br/>
@@ -236,20 +238,20 @@ function About() {
           </div>
         </div>
       </div>
-      <div>
+      <div class ="container padding width-page">
         <h1 > Some of my Hobbies </h1>
         <div class="row smallpadding">
           <div class="col d-grid gap-2">
-            <button type="button" class="btn btn-dark btn-lg btn-block" onClick={EntoTree}><h4>Entomology</h4></button>
+            <button type="button" class="btn btn-dark button-change-yellow btn-lg btn-block" onClick={EntoTree}><h4>Entomology</h4></button>
           </div>
           <div class="col d-grid gap-2">
-            <button type="button" class="btn btn-dark btn-lg btn-block" onClick={Astronomy} ><h4>Astronomy</h4></button>
+            <button type="button" class="btn btn-dark button-change-yellow btn-lg btn-block" onClick={Astronomy} ><h4>Astronomy</h4></button>
           </div>
           <div class="col d-grid gap-2">
-            <button type="button" class="btn btn-dark btn-lg btn-block" onClick={Books}><h4>Reading</h4></button>
+            <button type="button" class="btn btn-dark button-change-yellow btn-lg btn-block" onClick={Books}><h4>Reading</h4></button>
           </div>
           <div class="col d-grid gap-2">
-            <button type="button" class="btn btn-dark btn-lg btn-block" onClick={Wmap}><h4>Travel</h4></button>
+            <button type="button" class="btn btn-dark button-change-yellow btn-lg btn-block" onClick={Wmap}><h4>Travel</h4></button>
           </div>
         </div>
         {et === 1
@@ -261,8 +263,8 @@ function About() {
             : <br/>
           }
           {wm === 1
-            ? <div className="App" >
-             <WorldMap color="Blue" title=<h3>Where have I been?</h3> size="responsive" data={data} borderColor="white" backgroundColor="black" frame = "True" strokeOpacity="1"/>
+            ? <div className="WorldMapClass" >
+             <WorldMap color="#FFD523" title=<h3>Where have I been?</h3> size="responsive" data={data} borderColor="white" backgroundColor="black" frame = "True" strokeOpacity="1"/>
             </div>
             : <br/>
           }
@@ -273,7 +275,7 @@ function About() {
                   <h4> {date1.getDate()}/{date1.getMonth()+1}/{date1.getYear()+1900} </h4>
                 </div>
                 <div class="col d-grid gap-2 align">
-                  <label for="customRange1" class="form-label">Choose the day on Mars</label>
+                  <h4 for="customRange1" class="form-label">Choose the day on Mars</h4>
                 </div>
                 <div class="col d-grid gap-2 align-right">
                   <h4> {date2.getDate()}/{date2.getMonth()+1}/{date2.getYear()+1900} </h4>
@@ -288,6 +290,7 @@ function About() {
           }
       </div>
       <h4 class="padding align"> And coding of course but it seems obvious!</h4>
+      <hr/>
       <Footer/>
     </div>
     );

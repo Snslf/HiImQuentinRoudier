@@ -11,9 +11,16 @@ class ActionProvider {
     const greetingMessage = this.createChatBotMessage("Hi, friend.")
     this.updateChatbotState(greetingMessage)
   };
+
+  GoingBack = () => {
+    const message1 = this.createChatBotMessage(
+      "You want to ask me something else?", {widget:"learningOptions"});
+    this.updateChatbotState(message1);
+  }
+
   SayingHello = () => {
     const message1 = this.createChatBotMessage(
-      "Hello then! Are you looking for something else?");
+      "Hello then!");
     const message2 = this.createChatBotMessage(
         "Always nice to hear this!");
     const message3 = this.createChatBotMessage(

@@ -17,50 +17,41 @@ function Header(props) {
     setcont(1-cont);
     if(number === 1){
       setNumber(1- number);
-    }
+    };
   };
   function Click_cross(){
     setNumber(0);
     setcont(0);
-  }
+  };
   return (
       <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="/">My Site!</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <nav class="navbar fixed-top fixed-top navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand margin" href="/"><b>Home</b></a>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Resume</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/About">About</a>
-              </li>
-              <li class="nav-item">
-                <button type="button" class="nav-link"  onClick={() => Click_contact()}>Contact</button>
-              </li>
-            </ul>
-          </div>
+          <a class="navbar-brand margin" href="/Resume">Resume</a>
+
+          <a class="navbar-brand margin" href="/About">About</a>
+
+          <a class="navbar-brand margin" href="#" onClick={() => Click_contact()}>Contact</a>
+
+
         </nav>
         {cont === 1 && number === 0 &&
-          <div className="chat">
-            <button type="button" class="btn-close" aria-label="Close" onClick={() => Click_contact()}></button>
+          <div className="chat-frame">
+            <button type="button" class="btn-close cross-frame" aria-label="Close" onClick={() => Click_contact()}></button>
             <MailContext.Provider value={contextValue}>
               <Contact/>
             </MailContext.Provider>
           </div>
         }
         {number === 1 &&
-          <div className="chat">
-            <button type="button" class="btn-close" aria-label="Close" onClick={() => Click_cross()}></button>
-            <Contact_form/>}
+          <div className="chat-frame">
+            <button type="button" class="btn-close cross-frame" aria-label="Close" onClick={() => Click_cross()}></button>
+            <Contact_form/>
           </div>
         }
       </header>
   );
-}
+};
 
 export default Header;

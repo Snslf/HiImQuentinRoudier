@@ -12,11 +12,26 @@
   width : 85%;
   margin : auto;
 }
-.chat {
+
+.WorldMapClass {
+  text-align: center;
+  margin : auto;
+}
+
+.chat-frame {
   position:  fixed;
   bottom: 0;
   right: 0;
   display: inline-block;
+  text-align: center;
+
+}
+
+.cross-frame{
+  background-color: #595260;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 70px;
 }
 
 .slider-size{
@@ -29,15 +44,23 @@
   text-align: right;
 }
 
+.align-left{
+  text-align: left;
+}
+
 .padding{
   padding-top: 10%;
   padding-bottom: 10%;
 }
 
+.margin{
+  margin-left: 5%;
+  margin-right: 5%;
+}
 
 .smallpadding{
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 .App-logo {
   height: 40vmin;
@@ -151,7 +174,7 @@
 }
 
 .tree li:before {
-    outline: solid 1px white;
+    outline: solid 1px #FFD523;
     content: "";
     left: 0;
     position: absolute;
@@ -169,7 +192,7 @@
 
 .tree code,
 .tree a {
-    border: solid .1em white;
+    border: solid .1em #FFD523;
     border-radius: .2em;
     display: inline-block;
     margin: 0 .2em .5em;
@@ -180,7 +203,7 @@
 .tree ul:before,
 .tree code:before,
 .tree a:before {
-    outline: solid 1px white;
+    outline: solid 1px #FFD523;
     content: "";
     height: .5em;
     left: 50%;
@@ -208,20 +231,20 @@
 }
 .tree li a:hover,
 .tree li a:hover+ul li a {
-	background: white;
+	background: #FFD523;
   color: black;
-  border: 1px solid white;
+  border: 1px solid #FFD523;
 }
 
 .tree li a:hover + ul li::after,
 .tree li a:hover + ul li::before,
 .tree li a:hover + ul::before,
 .tree li a:hover + ul ul::before{
-	border-color:  white;
+	border-color:  #FFD523;
 }
 
 a:link, a:visited  {
-  color: white;
+  color: #FFD523;
   background-color: transparent;
   text-decoration: none;
 }
@@ -236,18 +259,160 @@ a:link, a:visited  {
 .learning-option-button {
   padding: 0.5rem;
   border-radius: 25px;
-  background: transparent;
-  border: 1px solid green;
+  background: #B2B1B9;
+  border: 1px solid #FFD523;
   margin: 3px;
 }
 
+.width-page{
+  width : 85%;
+}
+
+.react-chatbot-kit-chat-bot-message{
+  background-color: #FFD523;
+  color: black;
+}
+.react-chatbot-kit-chat-bot-message-arrow{
+  border-right: 8px solid #FFD523;
+}
+.react-chatbot-kit-chat-bot-message-container{
+  color: #595260;
+}
+.react-chatbot-kit-chat-header{
+  color: white;
+  background-color: #595260;
+}
+.react-chatbot-kit-chat-btn-send{
+  background-color: #FFD523;
+
+}
+
+.chatbot-avatar{
+  width: 40px;
+  height: 40px;
+  border-radius:40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  background-color: #595260;
+  color: #FFD523;
+  margin-right: 15px;
+}
 
 h1, .align{
   text-align: center;
 }
+hr{
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;
+  background-color:white;
+  height: 1px;
+  margin-left:  auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 body{
   background-color: black;
   color : white;
-  width : 85%;
   margin : auto;
+}
+
+.border-yellow{
+  border: solid 2px #FFD523;
+  border-radius: 15px;
+  margin: 2%;
+}
+.border-yellow:hover{
+  background-color: #595260;
+}
+.button-yellow{
+  background-color: black;
+  color: white;
+  margin: 4px;
+  border: solid 2px #FFD523 ;
+}
+.button-change-yellow:hover{
+  background-color: #FFD523;
+  color : black;
+}
+ a:link, a:visited{
+   color: white;
+ }
+
+.footer-link{
+  display: inline-block;
+  margin: 5px;
+  font-size: 1.5em;
+  color: white;
+}
+
+.app-link{
+  font-size: 2.5em;
+}
+
+.footer-link:hover{
+  color: #FFD523;
+}
+.div-skills{
+  text-align: center;
+}
+
+.skills{
+  background-color: #444444;
+  display: inline-block;
+  width: 170px;
+  height: 50px;
+  line-height:50px;
+  color: white;
+  border-radius: 5px;
+  margin: 5px;
+}
+.skills:hover{
+  background-color: #FFD523;
+  color: black;
+}
+
+.myskills-margin{
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.Hi-home-page{
+  color: #FFD523;
+  text-align: left;
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 8em;
+}
+.first-line-home{
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 4em;
+}
+
+.home-page{
+  margin-left: 300px;
+}
+.Welcome-home-page{
+  font-size: 1.8em;
+  writing-mode: vertical-rl;
+  padding-right: 30px;
+  padding-bottom: 32px;
+  transform: rotate(180deg);
+}
+
+.second-line{
+  display: inline-block;
+  margin-right: 20px;
+}
+.between-lines{
+  margin-top: 15px;
+}
+.between-lines-last-line{
+  margin-top: 30px;
+
 }

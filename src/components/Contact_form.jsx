@@ -4,7 +4,6 @@ import Footer from "./Footer";
 import Header from "./Header";
 import emailjs from 'emailjs-com';
 import MailContext from "./MailContext";
-import {MAIL_CONTEXT_TEMPLATE, MAIL_CONTEXT_API_KEY} from "./Constants.js";
 
 
 function Contact_form() {
@@ -12,7 +11,7 @@ function Contact_form() {
   function sendEmail(e) {
     e.preventDefault();
 
-    emailjs.sendForm('gmail', MAIL_CONTEXT_TEMPLATE, e.target, MAIL_CONTEXT_API_KEY)
+    emailjs.sendForm('gmail', process.env.REACT_APP_MAIL_CONTEXT_TEMPLATE, e.target, process.env.REACT_APP_MAIL_CONTEXT_API_KEY)
       .then((result) => {
           console.log(result.text);
       }, (error) => {

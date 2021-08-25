@@ -6,9 +6,12 @@ import About from "./About";
 import Contact from "./Contact";
 import Resume from "./Resume";
 import "../App.css";
-
 import {Route, Switch, BrowserRouter, Redirect} from 'react-router-dom';
+
+require('dotenv').config();
 function App() {
+
+
   return (
     <BrowserRouter>
       <Switch>

@@ -8,7 +8,6 @@ import Contacting from "./Contacting";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import me from "./images/Me.png";
-import {NASA_API_URL, NASA_API_KEY} from "./Constants.js";
 import fhaz from "./images/FHAZ.png";
 import rhaz from "./images/RHAZ.png";
 import mast from "./images/MASTCAM.png";
@@ -58,7 +57,8 @@ function About() {
   const[ast, setast] = useState(0);
   const[rangeast, setrangeast] = useState(1);
   var date3 = new Date(date1.getTime()+1000*60*60*24*rangeast);
-
+  console.log("ici là");
+  console.log(process.env);
   function Wmap(){
         setwm(1 - wm);
         if( wm === 0){
@@ -117,7 +117,7 @@ function About() {
       async function fetchPhoto(w){
 
         let numsol = (w.getYear()+1900)+"-"+(w.getMonth()+1)+"-"+w.getDate();
-        let complet_api_adress = NASA_API_URL + numsol + NASA_API_KEY;
+        let complet_api_adress = process.env.REACT_APP_NASA_API_URL + numsol + process.env.REACT_APP_NASA_API_KEY;
         const res = await fetch(complet_api_adress);
         const data = await res.json();
         setphotodata(data);

@@ -8,14 +8,14 @@ import Contacting from "./Contacting";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import me from "./images/Me.png";
-
-import fhaz from "./images/FHAZ.png"
-import rhaz from "./images/RHAZ.png"
-import mast from "./images/MASTCAM.png"
-import chemcam from "./images/CHEMCAM.png"
-import mahli from "./images/MAHLI.png"
-import mardi from "./images/MARDI.png"
-import navcam from "./images/NAVCAM.png"
+import {NASA_API_URL, NASA_API_KEY} from "./Constants.js";
+import fhaz from "./images/FHAZ.png";
+import rhaz from "./images/RHAZ.png";
+import mast from "./images/MASTCAM.png";
+import chemcam from "./images/CHEMCAM.png";
+import mahli from "./images/MAHLI.png";
+import mardi from "./images/MARDI.png";
+import navcam from "./images/NAVCAM.png";
 
 
 
@@ -34,17 +34,17 @@ var days = Math.ceil(difference / (1000 * 3600 * 24));
 
 const data =
     [
-      { country: "fr", value: ": I live there 🥖"},
+      { country: "fr", value: ": I live here 🥖"},
       { country: "gb", value: ": I went to London"},
-      { country: "de", value: ": I went to Berlin, Munchen, Wurzburg and Frieburg" },
-      { country: "it", value: ": I visited the north and the south"},
+      { country: "de", value: ": I went to Berlin, Munchen, Wurzburg and Frieburg. I recommend the black forest." },
+      { country: "it", value: ": I have been there two times and Florence will be one of the last things I'll forget"},
       { country: "va", value: ": Proud to have been in the smallest country in the world!"},
       { country: "es", value: ": I spent 2 weeks on the Costa Brava"},
       { country: "pt", value: ": I went to Lisbonne and it is now my favorite european city!"},
       { country: "dk", value: ": I went to Copenhaghe"},
       { country: "se", value: ": A lot of lakes there"},
       { country: "no", value: ": I walked a lot in the fjords but didn't see northen lights sadly"},
-      { country: "za", value: ": Walked a lot and did some safaris there"},
+      { country: "za", value: ": Walked a lot in the drakensberg and did some safaris there"},
       { country: "ls", value: ": Proud to have been in the highest bar of Africa :)"},
       { country: "sz", value: ": Despair in crazy landscapes"},
       { country: "jp", value: ": I studied there, we could speak about it during a looong time if you want :) "}
@@ -115,17 +115,14 @@ function About() {
       fetchPhoto(props.arg);
 
       async function fetchPhoto(w){
-        const apipart1 = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=";
-        const apipart2 = "&api_key=HnXY5YIrhbivzLTgcnmWKJBfFfyLG4tz3h9srRfW";
+
         let numsol = (w.getYear()+1900)+"-"+(w.getMonth()+1)+"-"+w.getDate();
-        console.log(numsol);
-        let complet_api_adress = apipart1 + numsol + apipart2;
+        let complet_api_adress = NASA_API_URL + numsol + NASA_API_KEY;
         const res = await fetch(complet_api_adress);
         const data = await res.json();
         setphotodata(data);
       }
     }, []);
-    console.log(JSON.stringify(photodata))
     if (!photodata) return( <div>
         <h1> Loading </h1>
         </div>);
@@ -136,7 +133,7 @@ function About() {
 
     return(
       <div class= "App">
-        <h4>The pictures taken on the {photodata.photos[num_order].earth_date}</h4>
+        <h4>The pictures taken on the {photodata.photos[num_order].earth_date} by the rover Curiosity on Mars</h4>
         <button type="button" class="btn button-yellow button-change-yellow btn-lg btn-block" onClick={() => order_pic(-25, photodata.photos.length)}><FontAwesomeIcon icon={faAngleDoubleLeft} /></button>
         <button type="button" class="btn button-yellow button-change-yellow btn-lg btn-block" onClick={() => order_pic(-1, photodata.photos.length)}><FontAwesomeIcon icon={faAngleLeft} /></button>
         <a> Image {num_order + 1}/{photodata.photos.length}</a>
@@ -230,14 +227,15 @@ function About() {
              alt="My face, you really miss something :("/>
           </div>
           <div class="col">
-            <h3> Hello! I'm Quentin, a former robotics and mechatronics engineer who decided to work in IT.</h3>
+            <h3> I'm Quentin, a former robotics and mechatronics engineer who decided to work in IT.</h3>
             <br/>
-            <p> After working on different subjects in different types of companies, I understood that the part I prefered in engineering was coding.</p>
+            <p> After obtaining my engineering degree at ESIEE-Amiens and a Research Master at the University of Technology of Compiegne, I worked on various subjects in different types of companies. It is during these experiences that I understood the part I enjoyed the most in engineering was coding.</p>
             <br/>
-            <p> This is the reason why I'm looking right now to work in IT as a software engineer or as a web developer </p>
+            <p> Then, I began to code more on my free time, trying to improve my understanding and my coding logic in python, on websites such as CodeWars or Codingame. And when finally I get confident enough in my skills, I began doing  projects from scratch like the website you are using right now. I was quite surprised that I enjoyed it that much and this is the reason why I'm looking right now to work in IT as a software engineer or as a web developer.</p>
           </div>
         </div>
       </div>
+      <hr/>
       <div class ="container padding width-page">
         <h1 > Some of my Hobbies </h1>
         <div class="row smallpadding">

@@ -35,7 +35,7 @@ class ActionProvider {
     const message1 = this.createChatBotMessage(
       "Interesting question!");
     const message2 = this.createChatBotMessage(
-      "Actually, I worked on wide topics such as mechatronics and robotics where I had to use a lot of engineering skills.");
+      "Actually, I worked on wide topics such as mechatronics and robotics where I had to mix a lot of engineering skills.");
     const message3 = this.createChatBotMessage(
       "But it helped me to understand that what I prefered in these kind of topics was coding.");
     const message4 = this.createChatBotMessage(
@@ -59,11 +59,11 @@ class ActionProvider {
     const message2 = this.createChatBotMessage(
       "But I really enjoyed coding when I discovered python.");
     const message3 = this.createChatBotMessage(
-      "Its simplicity and aspect of Easy to learn but Hard to master ");
+      "Especially its simplicity and aspect of Easy to learn but Hard to master.");
     const message4 = this.createChatBotMessage(
-      "Then, I began following bootcamps and doing my own projects to understand more about software engineering.");
+      "After, I followed a bootcamp on Udemy about web developpment where I studied all of the requirements to be a web developer.");
     const message5 = this.createChatBotMessage(
-      "And these kind of exercices made me understand that it is by far the kind of environnement I need");
+      "And now, to improve my skills, I'm developping projects like the website you are using right now 😁.");
     const message6 = this.createChatBotMessage(
       "Do you want to ask something else?", {widget: "learningOptions",});
 
@@ -72,6 +72,7 @@ class ActionProvider {
     this.updateChatbotState(message3);
     this.updateChatbotState(message4);
     this.updateChatbotState(message5);
+    this.updateChatbotState(message6);
 
   };
 

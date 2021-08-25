@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import emailjs from 'emailjs-com';
 import MailContext from "./MailContext";
+import {MAIL_CONTEXT_TEMPLATE, MAIL_CONTEXT_API_KEY} from "./Constants.js";
 
 
 function Contact_form() {
@@ -11,7 +12,7 @@ function Contact_form() {
   function sendEmail(e) {
     e.preventDefault();
 
-    emailjs.sendForm('gmail', 'template_zw4riwk', e.target, 'user_DzQxkT0tyxfrj7ZtHeHpK')
+    emailjs.sendForm('gmail', MAIL_CONTEXT_TEMPLATE, e.target, MAIL_CONTEXT_API_KEY)
       .then((result) => {
           console.log(result.text);
       }, (error) => {
@@ -20,7 +21,6 @@ function Contact_form() {
       e.target.reset();
     setsubmited(1-submited);
   };
-  console.log("submited", submited);
   if(submited === 0){
     return (
         <div class="Contact_form align-left">

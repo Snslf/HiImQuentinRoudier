@@ -11,10 +11,10 @@ function Footer() {
   return (
     <footer className="slider-size smallpadding">
       <div>
-        <a className= "footer-link" href="/"> Home </a>
-        <a className= "footer-link" href="/"> Resume </a>
-        <a className= "footer-link" href="/About"> About </a>
-        <a className= "footer-link" href="#"> Contact </a>
+        <h6 className= "footer-link" href="/"> Home </h6>
+        <h6 className= "footer-link" href="/"> Resume </h6>
+        <h6 className= "footer-link" href="/About"> About </h6>
+        <h6 className= "footer-link" href="#"> Contact </h6>
       </div>
       <div>
         <a className= "footer-link app-link" ><FontAwesomeIcon icon={faGithubSquare} /></a>

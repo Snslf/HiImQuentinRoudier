@@ -16,20 +16,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Icon } from '@iconify/react';
 import { faHtml5, faCss3Alt, faJsSquare, faReact, faNodeJs, faPython, faGitAlt } from '@fortawesome/free-brands-svg-icons'
 
-function changeBackground(e) {
-    e.target.style.background = 'red';
-}
-function normalBackground(e) {
-    e.target.style.background = '#444444';
-}
 
 function Home() {
   const year = new Date().getFullYear();
   return (
     <div>
+
       <Header />
+
       <div>
+
         <h1 class = "container width-page myskills-margin"> My skills </h1>
+
         <div className= "div-skills">
           <h4 className= "skills">HTML <FontAwesomeIcon icon={faHtml5} /></h4>
           <h4 className= "skills">CSS <FontAwesomeIcon icon={faCss3Alt} /></h4>
@@ -37,14 +35,18 @@ function Home() {
           <h4 className= "skills">React.js <FontAwesomeIcon icon={faReact} /></h4>
           <h4 className= "skills">Node.js <FontAwesomeIcon icon={faNodeJs} /></h4>
         </div>
+
         <br/>
+
         <div className= "div-skills">
           <h4 className= "skills">Python <FontAwesomeIcon icon={faPython} /></h4>
           <h4 className= "skills">Numpy <Icon icon="simple-icons:numpy" /></h4>
           <h4 className= "skills">Pandas <Icon icon="simple-icons:pandas" /></h4>
           <h4 className= "skills">Flask <Icon icon="cib:flask" /></h4>
         </div>
+
         <br/>
+
         <div className= "div-skills">
           <h4 className= "skills">SQL <Icon icon="ant-design:console-sql-outlined" /></h4>
           <h4 className= "skills">MongoDB <Icon icon="cib:mongodb" /></h4>
@@ -52,11 +54,18 @@ function Home() {
           <h4 className= "skills">Github <Icon icon="akar-icons:github-fill" /></h4>
           <h4 className= "skills">Gitlab <Icon icon="ant-design:gitlab-outlined" /></h4>
         </div>
+
       </div>
+
+
       <hr/>
+
+
       <div class="container">
+
         <h1> Work Experiences </h1>
-        <div class="row divcontent">
+
+        <div class="row divcontent divcontent1">
           <div class="col-3 contentimg">
             <img class="picture imgdiv"
              src={sii}
@@ -73,7 +82,8 @@ function Home() {
             </ul>
           </div>
         </div>
-        <div class="row divcontent">
+
+        <div class="row divcontent divcontent2">
           <div class="col">
             <h4>Mechatronics/Robotics intern and engineer at DemBoost - Feb 2019 - Feb 2020</h4>
             <ul>
@@ -94,7 +104,8 @@ function Home() {
              alt="The UTC logo"/>
           </div>
         </div>
-        <div class="row divcontent">
+
+        <div class="row divcontent divcontent1">
           <div class="col-3 contentimg">
             <img class="picture imgdiv"
              src={ng}
@@ -112,11 +123,16 @@ function Home() {
             </ul>
           </div>
         </div>
+
       </div>
+
+
       <hr/>
+
+
       <div class="container">
         <h1> Education </h1>
-        <div class="row divcontent">
+        <div class="row divcontent divcontent2">
           <div class="col">
             <h4> Udemy </h4>
             <p>The Complete 2021 Web Development Bootcamp : </p>
@@ -135,7 +151,8 @@ function Home() {
              alt="The UTC logo"/>
           </div>
         </div>
-        <div class="row divcontent">
+
+        <div class="row divcontent divcontent1">
           <div class="col-5 contentimg">
             <img class="picture imgdiv"
              src={utc}
@@ -154,14 +171,15 @@ function Home() {
             </ul>
           </div>
         </div>
-        <div class="row divcontent">
+
+        <div class="row divcontent divcontent2">
           <div class="col">
             <h4> ESIEE-Amiens </h4>
             <p>Engineer degree (M2), Major in industrial engineering </p>
             <ul>
-              <li>Mechatronics - robotics - image processing - production</li>
+              <li>Mechatronics - robotics - image processing - industrial engineering</li>
               <li>Metrology - probability - statistics</li>
-              <li>Power electronics - electrotechnic</li>
+              <li>Power electronics - electrical engineering</li>
               <li>C, C#, C++, telecommunication</li>
             </ul>
           </div>
@@ -173,9 +191,16 @@ function Home() {
              alt="The UTC logo"/>
           </div>
         </div>
+
       </div>
+
+
       <hr/>
+
+
       <Footer />
+
+
     </div>
   );
 }

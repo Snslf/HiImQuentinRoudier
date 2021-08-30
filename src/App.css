@@ -8,6 +8,29 @@
   z-index : 10;
 }
 
+.centered-app{
+  width : 85%;
+}
+
+.navbar-brand{
+  cursor: pointer;
+}
+
+.underline-link{
+  background:
+    linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)),
+    linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 120, 0, 1), rgba(255, 255, 0, 1));
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.underline-link:hover,
+.underline-link:focus {
+  background-size: 0 0.1em, 100% 0.1em;
+}
+
 .App {
   text-align: center;
   width : 85%;
@@ -51,13 +74,14 @@
 }
 
 .padding{
-  padding-top: 10%;
-  padding-bottom: 10%;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .margin{
-  margin-left: 5%;
-  margin-right: 5%;
+  padding: 2px 5px 2px 5px;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
 .smallpadding{
@@ -101,7 +125,7 @@
 
 .divcontent{
   background-color: #444444;
-  border-radius:25px;
+  border-radius:1em;
   width:90%;
   padding:2%;
   margin:2%;
@@ -271,7 +295,7 @@ a:link, a:visited  {
   margin: 3px;
 }
 
-.learning-option-button:hover{
+.learning-option-button:hover {
   background-color: #FFD523;
   color: black;
 }
@@ -280,26 +304,26 @@ a:link, a:visited  {
   width : 85%;
 }
 
-.react-chatbot-kit-chat-bot-message{
-  background-color: #FFD523;
-  color: black;
+.react-chatbot-kit-chat-bot-message {
+  background-color: #FFD523 !important;
+  color: black !important;
 }
-.react-chatbot-kit-chat-bot-message-arrow{
-  border-right: 8px solid #FFD523;
+.react-chatbot-kit-chat-bot-message-arrow {
+  border-right: 8px solid #FFD523 !important;
 }
-.react-chatbot-kit-chat-bot-message-container{
-  color: #595260;
+.react-chatbot-kit-chat-bot-message-container {
+  color: #595260 !important;
 }
-.react-chatbot-kit-chat-header{
-  color: white;
-  background-color: #595260;
+.react-chatbot-kit-chat-header {
+  color: white !important;
+  background-color: #595260 !important;
 }
-.react-chatbot-kit-chat-btn-send{
-  background-color: #FFD523;
+.react-chatbot-kit-chat-btn-send {
+  background-color: #FFD523 !important;
 
 }
 
-.chatbot-avatar{
+.chatbot-avatar {
   width: 40px;
   height: 40px;
   border-radius:40%;
@@ -347,17 +371,23 @@ body{
   margin: 4px;
   border: solid 2px #FFD523 ;
 }
+
 .button-change-yellow:hover{
   background-color: #FFD523;
   color : black;
 }
 
+.button-clicked{
+  background-color: #FFD523 !important;
+  color : black !important;
+}
 
 .footer-link{
   display: inline-block;
   margin: 5px;
   font-size: 1.5em;
   color: white;
+  cursor: pointer;
 }
 
 .app-link{
@@ -387,7 +417,7 @@ body{
 }
 
 .myskills-margin{
-  margin-top: 100px;
+  padding-top: 70px;
   margin-bottom: 20px;
 }
 
@@ -429,4 +459,35 @@ body{
 
 .link_here_home{
   color: #FFD523;
+}
+
+.background-image{
+  background-image: url("C:\Users\quent\OneDrive\Bureau\Web dev\CV\my-app\src\components\images\background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.chat-icon:hover{
+  font-size: 4em;
+  padding-bottom: 100px;
+  color: #FFD523;
+}
+.chat-icon{
+  padding : 15px;
+  position:  fixed;
+  bottom: 0;
+  right: 0;
+  display: inline-block;
+  text-align: center;
+  z-index: 10;
+  width: 100px;
+  height: 100px;
+  margin: 4px;
+  color: #FFD523;
+  font-size: 3em;
+  position: 'absolute';
+  left: '50%';
+  top: '50%';
+  cursor: pointer;
 }

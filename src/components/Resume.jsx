@@ -2,6 +2,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import Footer from "./Footer";
 import Header from "./Header";
+import {Helmet} from "react-helmet";
 import utc from "./images/UTC-SU.jpg";
 import esiee from "./images/ESIEE_AMIENS_LOGO.png";
 import udemy from "./images/UDEMY-BIS.png";
@@ -21,7 +22,11 @@ function Home() {
   const year = new Date().getFullYear();
   return (
     <div>
-
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>I'm Quentin Roudier</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <Header />
 
       <div>
@@ -119,7 +124,7 @@ function Home() {
               <li>Studying the following subject: Single-phase power decoupling technique utilizing Hybrid</li>
               <li>Hybridmethod with passive and active power decoupling </li>
               <li>Simulate the electrical systems on Matlab and Simulink </li>
-              <li>Participated to the redaction of a Scientific paper you can find by clicking <a href = "https://www.researchgate.net/publication/329959385_Single-phase_power_decoupling_technique_utilizing_Hybrid_method_with_passive_and_active_power_decoupling">here</a></li>
+              <li>Participated to the redaction of a Scientific paper you can find by clicking <a class = "underline-link" href = "https://www.researchgate.net/publication/329959385_Single-phase_power_decoupling_technique_utilizing_Hybrid_method_with_passive_and_active_power_decoupling">here</a></li>
             </ul>
           </div>
         </div>

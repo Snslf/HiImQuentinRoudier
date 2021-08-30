@@ -14,7 +14,7 @@ class ActionProvider {
 
   GoingBack = () => {
     const message1 = this.createChatBotMessage(
-      "You want to ask me something else?", {widget:"learningOptions"});
+      "Something else?", {widget:"learningOptions"});
     this.updateChatbotState(message1);
   }
 
@@ -24,7 +24,7 @@ class ActionProvider {
     const message2 = this.createChatBotMessage(
         "Always nice to hear this!");
     const message3 = this.createChatBotMessage(
-      "You want to ask me something else?", {widget:"learningOptions"}
+      "Something else?", {widget:"learningOptions"}
     )
     this.updateChatbotState(message1);
     this.updateChatbotState(message2);
@@ -43,7 +43,7 @@ class ActionProvider {
     const message5 = this.createChatBotMessage(
       "And these kind of exercices made me understand that it is by far the kind of environnement I need");
     const message6 = this.createChatBotMessage(
-      "Do you want to ask something else?", {widget: "learningOptions",});
+      "Something else?", {widget: "learningOptions",});
 
     this.updateChatbotState(message1);
     this.updateChatbotState(message2);
@@ -65,7 +65,7 @@ class ActionProvider {
     const message5 = this.createChatBotMessage(
       "And now, to improve my skills, I'm developping projects like the website you are using right now 😁.");
     const message6 = this.createChatBotMessage(
-      "Do you want to ask something else?", {widget: "learningOptions",});
+      "Something else?", {widget: "learningOptions",});
 
     this.updateChatbotState(message1);
     this.updateChatbotState(message2);

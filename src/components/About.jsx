@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
+import ReactLoading from 'react-loading';
 import 'bootstrap/dist/css/bootstrap.css';
 import Footer from "./Footer";
+import {Helmet} from "react-helmet";
 import Header from "./Header";
 import FavoriteBooks from "./FavoriteBooks";
 import EntomologyTree from "./EntomologyTree";
@@ -124,7 +126,7 @@ function About() {
       }
     }, []);
     if (!photodata) return( <div>
-        <h1> Loading </h1>
+          <ReactLoading  class = "WorldMapClass" type="spin" color="white" height={50} width={50} />
         </div>);
     if(photodata.photos===null || Object.keys(photodata.photos).length === 0) return(<div>
         <h1> No picture has been taken that day, or maybe they are not uplaoded.</h1>
@@ -217,7 +219,12 @@ function About() {
     );
   };
   return (
-    <div>
+    <div class = "myskills-margin">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>I'm Quentin Roudier</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
       <Header />
       <div class="container padding width-page">
         <div class="row">
@@ -240,34 +247,43 @@ function About() {
         <h1 > Some of my Hobbies </h1>
         <div class="row smallpadding">
           <div class="col d-grid gap-2">
-            <button type="button" class="btn btn-dark button-change-yellow btn-lg btn-block" onClick={EntoTree}><h4>Entomology</h4></button>
+            {et === 1
+              ? <button type="button" class=" button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={EntoTree}><h4>Entomology</h4></button>
+              : <button type="button" class=" btn btn-dark button-change-yellow btn-lg btn-block" onClick={EntoTree}><h4>Entomology</h4></button>
+            }
           </div>
           <div class="col d-grid gap-2">
-            <button type="button" class="btn btn-dark button-change-yellow btn-lg btn-block" onClick={Astronomy} ><h4>Astronomy</h4></button>
+            {ast === 1
+              ? <button type="button" class=" button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={Astronomy} ><h4>Astronomy</h4></button>
+              : <button type="button" class="btn btn-dark button-change-yellow btn-lg btn-block" onClick={Astronomy} ><h4>Astronomy</h4></button>
+            }
           </div>
           <div class="col d-grid gap-2">
-            <button type="button" class="btn btn-dark button-change-yellow btn-lg btn-block" onClick={Books}><h4>Reading</h4></button>
+            {bk === 1
+              ? <button type="button" class="button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={Books}><h4>Reading</h4></button>
+              : <button type="button" class="btn btn-dark button-change-yellow btn-lg btn-block" onClick={Books}><h4>Reading</h4></button>
+            }
           </div>
           <div class="col d-grid gap-2">
-            <button type="button" class="btn btn-dark button-change-yellow btn-lg btn-block" onClick={Wmap}><h4>Travel</h4></button>
+            {wm === 1
+              ? <button type="button" class="button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={Wmap}><h4>Travel</h4></button>
+              : <button type="button" class="btn btn-dark button-change-yellow btn-lg btn-block" onClick={Wmap}><h4>Travel</h4></button>
+            }
           </div>
         </div>
-        {et === 1
-          ? <EntomologyTree/>
-          : <br/>
+        {et === 1 &&
+           <EntomologyTree/>
         }
-          {bk === 1
-            ? <FavoriteBooks/>
-            : <br/>
+          {bk === 1 &&
+             <FavoriteBooks/>
           }
-          {wm === 1
-            ? <div className="WorldMapClass" >
+          {wm === 1 &&
+            <div className="WorldMapClass" >
              <WorldMap color="#FFD523" title=<h3>Where have I been?</h3> size="responsive" data={data} borderColor="white" backgroundColor="black" frame = "True" strokeOpacity="1"/>
             </div>
-            : <br/>
           }
-          {ast === 1
-            ?<div>
+          {ast === 1 &&
+             <div>
               <div class = "row">
                 <div class="col d-grid gap-2 ">
                   <h4> {date1.getDate()}/{date1.getMonth()+1}/{date1.getYear()+1900} </h4>
@@ -284,7 +300,6 @@ function About() {
               </div>
               <SendApiRequest arg={date3}/>
             </div>
-            :<br/>
           }
       </div>
       <h4 class="padding align"> And coding of course but it seems obvious!</h4>

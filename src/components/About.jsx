@@ -59,8 +59,7 @@ function About() {
   const[ast, setast] = useState(0);
   const[rangeast, setrangeast] = useState(1);
   var date3 = new Date(date1.getTime()+1000*60*60*24*rangeast);
-  console.log("ici là");
-  console.log(process.env);
+  const[date_nasa, setdate_nasa] = useState(date3);
   function Wmap(){
         setwm(1 - wm);
         if( wm === 0){
@@ -94,9 +93,13 @@ function About() {
     };
 
   };
+  function ChangeDateNasa(){
+    if(date3 != date_nasa){
+      setdate_nasa(date3);
+    }
+  }
 
-
-  function SendApiRequest(props){
+  function SendApiRequest(){
 
     const[photodata, setphotodata] = useState(null);
     const[num_order, setnum_order] = useState(1);
@@ -114,7 +117,7 @@ function About() {
     }
 
     useEffect(() =>{
-      fetchPhoto(props.arg);
+      fetchPhoto(date_nasa);
 
       async function fetchPhoto(w){
 
@@ -227,17 +230,15 @@ function About() {
       </Helmet>
       <Header />
       <div class="container padding width-page">
-        <div class="row">
-          <div class="col">
+        <div class="about-bio-container">
+          <div>
             <img class="picture profilpicture"
              src={me}
              alt="My face, you really miss something :("/>
           </div>
-          <div class="col">
+          <div class = "about-bio-text">
             <h3> I'm Quentin, a former robotics and mechatronics engineer who decided to work in IT.</h3>
-            <br/>
             <p> After obtaining my engineering degree at ESIEE-Amiens and a Research Master at the University of Technology of Compiegne, I worked on various subjects in different types of companies. It is during these experiences that I understood the part I enjoyed the most in engineering was coding.</p>
-            <br/>
             <p> Then, I began to code more on my free time, trying to improve my understanding and my coding logic in python, on websites such as CodeWars or Codingame. And when finally I get confident enough in my skills, I began doing  projects from scratch like the website you are using right now. I was quite surprised that I enjoyed it that much and this is the reason why I'm looking right now to work in IT as a software engineer or as a web developer.</p>
           </div>
         </div>
@@ -245,29 +246,29 @@ function About() {
       <hr/>
       <div class ="container padding width-page">
         <h1 > Some of my Hobbies </h1>
-        <div class="row smallpadding">
-          <div class="col d-grid gap-2">
+        <div class="hobbies-buttons-container">
+          <div class="hobbies-button">
             {et === 1
-              ? <button type="button" class=" button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={EntoTree}><h4>Entomology</h4></button>
-              : <button type="button" class=" btn btn-dark button-change-yellow btn-lg btn-block" onClick={EntoTree}><h4>Entomology</h4></button>
+              ? <button type="button" class="hobbies-button-width button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={EntoTree}><h4>Entomology</h4></button>
+              : <button type="button" class="hobbies-button-width btn btn-dark button-change-yellow btn-lg btn-block" onClick={EntoTree}><h4>Entomology</h4></button>
             }
           </div>
-          <div class="col d-grid gap-2">
+          <div class="hobbies-button">
             {ast === 1
-              ? <button type="button" class=" button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={Astronomy} ><h4>Astronomy</h4></button>
-              : <button type="button" class="btn btn-dark button-change-yellow btn-lg btn-block" onClick={Astronomy} ><h4>Astronomy</h4></button>
+              ? <button type="button" class="hobbies-button-width button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={Astronomy} ><h4>Astronomy</h4></button>
+              : <button type="button" class="hobbies-button-width btn btn-dark button-change-yellow btn-lg btn-block" onClick={Astronomy} ><h4>Astronomy</h4></button>
             }
           </div>
-          <div class="col d-grid gap-2">
+          <div class="hobbies-button">
             {bk === 1
-              ? <button type="button" class="button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={Books}><h4>Reading</h4></button>
-              : <button type="button" class="btn btn-dark button-change-yellow btn-lg btn-block" onClick={Books}><h4>Reading</h4></button>
+              ? <button type="button" class="hobbies-button-width button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={Books}><h4>Reading</h4></button>
+              : <button type="button" class="hobbies-button-width btn btn-dark button-change-yellow btn-lg btn-block" onClick={Books}><h4>Reading</h4></button>
             }
           </div>
-          <div class="col d-grid gap-2">
+          <div class="hobbies-button">
             {wm === 1
-              ? <button type="button" class="button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={Wmap}><h4>Travel</h4></button>
-              : <button type="button" class="btn btn-dark button-change-yellow btn-lg btn-block" onClick={Wmap}><h4>Travel</h4></button>
+              ? <button type="button" class="hobbies-button-width button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={Wmap}><h4>Travel</h4></button>
+              : <button type="button" class="hobbies-button-width btn btn-dark button-change-yellow btn-lg btn-block" onClick={Wmap}><h4>Travel</h4></button>
             }
           </div>
         </div>
@@ -279,7 +280,7 @@ function About() {
           }
           {wm === 1 &&
             <div className="WorldMapClass" >
-             <WorldMap color="#FFD523" title=<h3>Where have I been?</h3> size="responsive" data={data} borderColor="white" backgroundColor="black" frame = "True" strokeOpacity="1"/>
+             <WorldMap color="#FFD523" title=<h3>Where have I been ? Don't hesitate to go over the countries !</h3> size="responsive" data={data} borderColor="white" backgroundColor="black" frame = "True" strokeOpacity="1"/>
             </div>
           }
           {ast === 1 &&
@@ -298,10 +299,11 @@ function About() {
               <div class="slider-size">
                 <input type="range" class="form-range" min="0" max={days} id="customRange1" onChange={(event) => setrangeast(event.target.value)}/>
               </div>
-              <SendApiRequest arg={date3}/>
+              <button type="button" class="btn btn-dark button-change-yellow btn-lg btn-block" onClick={ChangeDateNasa}><h4>Show</h4></button>
+              <SendApiRequest/>
             </div>
           }
-      </div>
+        </div>
       <h4 class="padding align"> And coding of course but it seems obvious!</h4>
       <hr/>
       <Footer/>

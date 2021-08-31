@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useContext, createContext } from "react";
+import { useLocation } from 'react-router-dom'
 import {Helmet} from "react-helmet";
 import 'bootstrap/dist/css/bootstrap.css';
 import Contact from "./Contact";
@@ -16,6 +17,9 @@ function Header(props) {
     number,
     updateNumber: setNumber
   };
+  const location = useLocation();
+
+
   function Click_contact(){
     setcont(1-cont);
     if(number === 1){
@@ -30,13 +34,18 @@ function Header(props) {
       <header>
         <nav class=" navbar fixed-top fixed-top navbar-expand-lg navbar-light bg-light">
           <div class="App">
-            <a class=" underline-link navbar-brand margin" href="/"><b>Home</b></a>
+            <a class=" underline-link navbar-brand margin" href="/">{location.pathname === "/"?
+          <b>Home</b>
+          : <a>Home</a> }</a>
 
-            <a class=" underline-link navbar-brand margin" href="/Resume">Resume</a>
+            <a class=" underline-link navbar-brand margin" href="/Resume">{location.pathname === "/Resume"?
+          <b>Resume</b>
+          : <a>Resume</a> }</a>
 
-            <a class="underline-link navbar-brand margin" href="/About">About</a>
+            <a class="underline-link navbar-brand margin" href="/About">{location.pathname === "/About"?
+          <b>About</b>
+          : <a>About</a> }</a>
 
-            <a class=" underline-link navbar-brand margin" onClick={() => Click_contact()}>Contact</a>
           </div>
 
 

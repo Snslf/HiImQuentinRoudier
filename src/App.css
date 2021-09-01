@@ -8,6 +8,37 @@
   z-index : 10;
 }
 
+.Contact-bye{
+  background-color: #2C2E43;
+  padding : 5px;
+  margin : 5px;
+  border-color : white;
+  border-width: 1px;
+  border-radius : 10px;
+  z-index : 10;
+}
+
+@media (max-height: 580px) {
+  .chat-frame-form{
+    height:515px;
+  }
+  .Contact_form{
+    background-color: #2C2E43;
+    padding : 5px;
+    margin : 5px;
+    border-color : white;
+    border-width: 1px;
+    border-radius : 10px;
+    z-index : 10;
+    height:500px;
+    font-size: 0.8em;
+  }
+  input{
+    height:24px;
+    font-size: 0.8em;
+  }
+ }
+
 .centered-app{
   width : 85%;
 }
@@ -49,9 +80,15 @@
   display: inline-block;
   text-align: center;
   z-index: 10;
+}
+
+.chat-frame-form{
 
 }
 
+.chat-frame-chatbot{
+  height:480px;
+}
 .cross-frame{
   background-color: #595260;
   border-top-left-radius: 5px;
@@ -167,6 +204,7 @@
 .profilpicture{
 
   max-width: 400px;
+  width: 100%;
   height:auto;
   display: flex;
   padding : 5px;
@@ -180,6 +218,15 @@
   background-color: black;
 }
 
+
+.tree-container{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:space-evenly;
+  align-items: center;
+}
+
+
 .tree,
 .tree ul,
 .tree li {
@@ -192,6 +239,14 @@
 .tree {
     text-align: center;
 }
+
+@media (max-width: 767.98px) {
+  .tree a {
+      text-align: center;
+      writing-mode: vertical-rl;
+  }
+ }
+
 
 .tree,
 .tree ul {
@@ -417,10 +472,12 @@ body{
   border-radius: 5px;
   margin: 5px;
 }
+
 .skills:hover{
   background-color: #FFD523;
   color: black;
 }
+
 
 .myskills-margin{
   padding-top: 70px;
@@ -444,11 +501,7 @@ body{
   margin-left: 300px;
 }
 .Welcome-home-page{
-  font-size: 1.8em;
-  writing-mode: vertical-rl;
-  padding-right: 30px;
-  padding-bottom: 32px;
-  transform: rotate(180deg);
+  font-size: 2.2em;
 }
 
 .second-line{
@@ -469,10 +522,19 @@ body{
 
 .background-image{
   background-image: url("C:\Users\quent\OneDrive\Bureau\Web dev\CV\my-app\src\components\images\background.jpg");
+  background-size: auto 100%;
+  background-position: 50% 0px;
   background-repeat: no-repeat;
+  max-width: 100%;
+  height: auto;
+  text-align: center;
   background-attachment: fixed;
-  background-size: 100% 100%;
 }
+
+.home-hr{
+  width: 65%;
+}
+
 
 .chat-icon:hover{
   font-size: 4em;
@@ -504,7 +566,11 @@ body{
   flex-wrap:wrap;
   justify-content:center;
   align-items: flex-start;
+}
 
+.accordion-item:hover{
+  background-color: #FFD523;
+  color: black;
 }
 
 .accordion-item{
@@ -563,9 +629,46 @@ body{
   min-width:  250px;
 }
 
-.home-container{
+.Nasa-range-title-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin:1em;
+}
+
+.Nasa-display-buttons-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin:1em;
+}
+
+.Nasa-pictures-container{
   display: flex;
   flex-wrap:wrap;
-  justify-content:center;
+  justify-content:space-evenly;
   align-items: center;
+  margin:1em;
+}
+
+.Nasa-picture{
+  min-width: 300px;
+  max-width: 400px;
+  width:100%;
+  height:auto;
+  border: solid .1em #FFD523;
+  border-radius: 2em;
+  margin:1em;
+}
+
+.Nasa-cam-picture{
+  min-width: 300px;
+  max-width: 400px;
+  width:100%;
+  height:auto;
+  border: solid .1em #FFD523;
+  border-radius: 2em;
+  margin:1em;
 }

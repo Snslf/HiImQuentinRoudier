@@ -12,13 +12,12 @@ function Footer() {
     <footer className="slider-size smallpadding">
       <div>
         <h6 className= "footer-link" href="/"> Home </h6>
-        <h6 className= "footer-link" href="/"> Resume </h6>
+        <h6 className= "footer-link" href="/Resume"> Resume </h6>
         <h6 className= "footer-link" href="/About"> About </h6>
-        <h6 className= "footer-link" href="#"> Contact </h6>
       </div>
       <div>
-        <a className= "footer-link app-link" ><FontAwesomeIcon icon={faGithubSquare} /></a>
-        <a className= "footer-link app-link"><FontAwesomeIcon icon={faLinkedin} /></a>
+        <a className= "footer-link app-link" href="https://github.com/Snslf"><FontAwesomeIcon icon={faGithubSquare} /></a>
+        <a className= "footer-link app-link" href="https://www.linkedin.com/in/quentin-roudier-546008150/"><FontAwesomeIcon icon={faLinkedin} /></a>
       </div>
       <p>Copyright ⓒ {year}</p>
     </footer>

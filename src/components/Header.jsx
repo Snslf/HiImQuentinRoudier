@@ -51,7 +51,7 @@ function Header(props) {
 
         </nav>
         {cont === 1 && number === 0 &&
-          <div className="chat-frame">
+          <div className="chat-frame chat-frame-chatbot">
             <button type="button" class="btn-close cross-frame" aria-label="Close" onClick={() => Click_contact()}></button>
             <MailContext.Provider value={contextValue}>
               <Contact/>
@@ -59,7 +59,7 @@ function Header(props) {
           </div>
         }
         {number === 1 &&
-          <div className="chat-frame">
+          <div className="chat-frame chat-frame-form">
             <button type="button" class="btn-close cross-frame" aria-label="Close" onClick={() => Click_cross()}></button>
             <Contact_form/>
           </div>

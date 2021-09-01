@@ -56,7 +56,7 @@ function Contact_form() {
       );
     }else{
       return (
-        <div class="Contact_form">
+        <div class="Contact-bye">
           <a> Thank you!</a>
           <br/>
           <br/>

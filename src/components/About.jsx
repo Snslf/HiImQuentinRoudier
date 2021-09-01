@@ -59,7 +59,6 @@ function About() {
   const[ast, setast] = useState(0);
   const[rangeast, setrangeast] = useState(1);
   var date3 = new Date(date1.getTime()+1000*60*60*24*rangeast);
-  const[date_nasa, setdate_nasa] = useState(date3);
   function Wmap(){
         setwm(1 - wm);
         if( wm === 0){
@@ -93,13 +92,8 @@ function About() {
     };
 
   };
-  function ChangeDateNasa(){
-    if(date3 != date_nasa){
-      setdate_nasa(date3);
-    }
-  }
 
-  function SendApiRequest(){
+  function NASAApi(props){
 
     const[photodata, setphotodata] = useState(null);
     const[num_order, setnum_order] = useState(1);
@@ -117,7 +111,7 @@ function About() {
     }
 
     useEffect(() =>{
-      fetchPhoto(date_nasa);
+      fetchPhoto(props.arg);
 
       async function fetchPhoto(w){
 
@@ -137,85 +131,89 @@ function About() {
         </div>);
 
     return(
-      <div class= "App">
-        <h4>The pictures taken on the {photodata.photos[num_order].earth_date} by the rover Curiosity on Mars</h4>
-        <button type="button" class="btn button-yellow button-change-yellow btn-lg btn-block" onClick={() => order_pic(-25, photodata.photos.length)}><FontAwesomeIcon icon={faAngleDoubleLeft} /></button>
-        <button type="button" class="btn button-yellow button-change-yellow btn-lg btn-block" onClick={() => order_pic(-1, photodata.photos.length)}><FontAwesomeIcon icon={faAngleLeft} /></button>
-        <a> Image {num_order + 1}/{photodata.photos.length}</a>
-        <button type="button" class="btn button-yellow button-change-yellow btn-lg btn-block" onClick={() => order_pic(1, photodata.photos.length)}><FontAwesomeIcon icon={faAngleRight} /></button>
-        <button type="button" class="btn button-yellow button-change-yellow btn-lg btn-block" onClick={() => order_pic(25, photodata.photos.length)}><FontAwesomeIcon icon={faAngleDoubleRight} /></button>
-        <div class="row">
-          <div class = "col d-grid gap-2 border-yellow">
-            <img
-              src={photodata.photos[num_order].img_src}
-              alt = {photodata.photos[num_order].img_src}
-              class = "profilpicture" />
-          </div>
-          <div class = "col d-grid gap-2 border-yellow">
-            <a>{photodata.photos[num_order].camera.full_name} ({photodata.photos[num_order].camera.name})</a>
-            {photodata.photos[num_order].camera.name === "FHAZ" &&
-            <div>
-              <a>The HAZcams (RHAZ and FHAZ) detect hazards to the front and back pathways of the rover, such as large rocks, trenches, or sand dunes.</a>
+      <div>
+        <h4 class= "App">The pictures taken on the {photodata.photos[num_order].earth_date} by the rover Curiosity on Mars</h4>
+        <div class="Nasa-display-buttons-container">
+          <button type="button" class="btn button-yellow button-change-yellow btn-lg btn-block" onClick={() => order_pic(-25, photodata.photos.length)}><FontAwesomeIcon icon={faAngleDoubleLeft} /></button>
+          <button type="button" class="btn button-yellow button-change-yellow btn-lg btn-block" onClick={() => order_pic(-1, photodata.photos.length)}><FontAwesomeIcon icon={faAngleLeft} /></button>
+          <a> Image {num_order + 1}/{photodata.photos.length}</a>
+          <button type="button" class="btn button-yellow button-change-yellow btn-lg btn-block" onClick={() => order_pic(1, photodata.photos.length)}><FontAwesomeIcon icon={faAngleRight} /></button>
+          <button type="button" class="btn button-yellow button-change-yellow btn-lg btn-block" onClick={() => order_pic(25, photodata.photos.length)}><FontAwesomeIcon icon={faAngleDoubleRight} /></button>
+        </div>
+        <div class= "App">
+          <div class ="Nasa-pictures-container">
+            <div class = "Nasa-picture">
               <img
-                src={fhaz}
-                alt = "fhaz"
+                src={photodata.photos[num_order].img_src}
+                alt = {photodata.photos[num_order].img_src}
                 class = "profilpicture" />
             </div>
-            }
-            {photodata.photos[num_order].camera.name === "RHAZ" &&
-            <div>
-              <a>The HAZcams (RHAZ and FHAZ) detect hazards to the front and back pathways of the rover, such as large rocks, trenches, or sand dunes.</a>
-              <img
-                src={rhaz}
-                alt = "rhaz"
-                class = "profilpicture" />
+            <div class = "Nasa-cam-picture">
+              <a><b>{photodata.photos[num_order].camera.full_name} ({photodata.photos[num_order].camera.name})</b></a>
+              {photodata.photos[num_order].camera.name === "FHAZ" &&
+              <div>
+                <a>The HAZcams (RHAZ and FHAZ) detect hazards to the front and back pathways of the rover, such as large rocks, trenches, or sand dunes.</a>
+                <img
+                  src={fhaz}
+                  alt = "fhaz"
+                  class = "profilpicture" />
+              </div>
+              }
+              {photodata.photos[num_order].camera.name === "RHAZ" &&
+              <div>
+                <a>The HAZcams (RHAZ and FHAZ) detect hazards to the front and back pathways of the rover, such as large rocks, trenches, or sand dunes.</a>
+                <img
+                  src={rhaz}
+                  alt = "rhaz"
+                  class = "profilpicture" />
+              </div>
+              }
+              {photodata.photos[num_order].camera.name === "MAST" &&
+              <div>
+                <a>	To take panoramic color images of the surface and atmospheric features and the terrain ahead of the rover. </a>
+                <img
+                  src={mast}
+                  alt = "mast"
+                  class = "profilpicture" />
+              </div>
+              }
+              {photodata.photos[num_order].camera.name === "CHEMCAM" &&
+              <div>
+                <a> To analyze the chemical composition of rocks and soil. </a>
+                <img
+                  src={chemcam}
+                  alt = "chemcam"
+                  class = "profilpicture" />
+              </div>
+              }
+              {photodata.photos[num_order].camera.name === "MAHLI" &&
+              <div>
+                <a> Microscopic Imaging of minerals, textures and structures in rocks and soil at scales smaller than the diameter of a human hair.</a>
+                <img
+                  src={mahli}
+                  alt = "mahli"
+                  class = "profilpicture" />
+              </div>
+              }
+              {photodata.photos[num_order].camera.name === "MARDI" &&
+              <div>
+                <a>To took pictures during the spacecraft descent through the Martian atmosphere.</a>
+                <img
+                  src={mardi}
+                  alt = "mardi"
+                  class = "profilpicture" />
+              </div>
+              }
+              {photodata.photos[num_order].camera.name === "NAVCAM" &&
+              <div>
+                <a> Aid in autonomous navigation</a>
+                <img
+                  src={navcam}
+                  alt = "navcam"
+                  class = "profilpicture" />
+              </div>
+              }
             </div>
-            }
-            {photodata.photos[num_order].camera.name === "MAST" &&
-            <div>
-              <a>	To take panoramic color images of the surface and atmospheric features and the terrain ahead of the rover. </a>
-              <img
-                src={mast}
-                alt = "mast"
-                class = "profilpicture" />
-            </div>
-            }
-            {photodata.photos[num_order].camera.name === "CHEMCAM" &&
-            <div>
-              <a> To analyze the chemical composition of rocks and soil. </a>
-              <img
-                src={chemcam}
-                alt = "chemcam"
-                class = "profilpicture" />
-            </div>
-            }
-            {photodata.photos[num_order].camera.name === "MAHLI" &&
-            <div>
-              <a> Microscopic Imaging of minerals, textures and structures in rocks and soil at scales smaller than the diameter of a human hair.</a>
-              <img
-                src={mahli}
-                alt = "mahli"
-                class = "profilpicture" />
-            </div>
-            }
-            {photodata.photos[num_order].camera.name === "MARDI" &&
-            <div>
-              <a>To took pictures during the spacecraft descent through the Martian atmosphere.</a>
-              <img
-                src={mardi}
-                alt = "mardi"
-                class = "profilpicture" />
-            </div>
-            }
-            {photodata.photos[num_order].camera.name === "NAVCAM" &&
-            <div>
-              <a> Aid in autonomous navigation</a>
-              <img
-                src={navcam}
-                alt = "navcam"
-                class = "profilpicture" />
-            </div>
-            }
           </div>
         </div>
       </div>
@@ -272,8 +270,12 @@ function About() {
             }
           </div>
         </div>
+      </div>
+      <div>
         {et === 1 &&
+          <div class="tree-container">
            <EntomologyTree/>
+          </div>
         }
           {bk === 1 &&
              <FavoriteBooks/>
@@ -285,22 +287,15 @@ function About() {
           }
           {ast === 1 &&
              <div>
-              <div class = "row">
-                <div class="col d-grid gap-2 ">
-                  <h4> {date1.getDate()}/{date1.getMonth()+1}/{date1.getYear()+1900} </h4>
-                </div>
-                <div class="col d-grid gap-2 align">
-                  <h4 for="customRange1" class="form-label">Choose the day on Mars</h4>
-                </div>
-                <div class="col d-grid gap-2 align-right">
-                  <h4> {date2.getDate()}/{date2.getMonth()+1}/{date2.getYear()+1900} </h4>
-                </div>
+              <div class = "Nasa-range-title-container">
+                <h4> {date1.getDate()}/{date1.getMonth()+1}/{date1.getYear()+1900} </h4>
+                <h4 for="customRange1" class="form-label">Choose the day on Mars</h4>
+                <h4> {date2.getDate()}/{date2.getMonth()+1}/{date2.getYear()+1900} </h4>
               </div>
               <div class="slider-size">
                 <input type="range" class="form-range" min="0" max={days} id="customRange1" onChange={(event) => setrangeast(event.target.value)}/>
               </div>
-              <button type="button" class="btn btn-dark button-change-yellow btn-lg btn-block" onClick={ChangeDateNasa}><h4>Show</h4></button>
-              <SendApiRequest/>
+              <NASAApi arg={date3}/>
             </div>
           }
         </div>

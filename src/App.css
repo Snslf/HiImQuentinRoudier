@@ -1,14 +1,16 @@
 
-
-.backgound-image{
+html{
   background-image: url("C:\Users\quent\OneDrive\Bureau\Web dev\CV\my-app\src\components\images\background2.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
+
 .zIndex{
-  z-index: 20;
+  z-index: 5;
+  position: relative;
 }
 
 .Contact_form {
@@ -93,7 +95,7 @@
   right: 0;
   display: inline-block;
   text-align: center;
-  z-index: 10;
+  z-index: 100;
 }
 
 
@@ -101,7 +103,7 @@
   height:480px;
 }
 .cross-frame{
-  background-color: #001E6C;
+  background-color: #FFD523;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   width: 70px;
@@ -186,7 +188,7 @@
   background-color: #AAAAAA;
 }
 .divcontent2:hover{
-  background-color: #FFAA4C;
+  background-color: #FFD523;
   color: black;
 }
 .divmap{
@@ -223,11 +225,6 @@
   margin:auto;
 }
 
-
-
-.form-range{
-  background-color: #2C2E43;
-}
 
 
 .tree-container{
@@ -275,7 +272,7 @@
 }
 
 .tree li:before {
-    outline: solid 1px #FFAA4C;
+    outline: solid 1px #FFD523;
     content: "";
     left: 0;
     position: absolute;
@@ -293,18 +290,19 @@
 
 .tree code,
 .tree a {
-    border: solid .1em #FFAA4C;
+    border: solid .1em #FFD523;
     border-radius: .2em;
     display: inline-block;
     margin: 0 .2em .5em;
     padding: .2em .5em;
     position: relative;
+    color: #FFD523;
 }
 
 .tree ul:before,
 .tree code:before,
 .tree a:before {
-    outline: solid 1px #FFAA4C;
+    outline: solid 1px #FFD523;
     content: "";
     height: .5em;
     left: 50%;
@@ -332,16 +330,16 @@
 }
 .tree li a:hover,
 .tree li a:hover+ul li a {
-	background: #FFAA4C;
+	background: #FFD523;
   color: black;
-  border: 1px solid #FFAA4C;
+  border: 1px solid #FFD523;
 }
 
 .tree li a:hover + ul li::after,
 .tree li a:hover + ul li::before,
 .tree li a:hover + ul::before,
 .tree li a:hover + ul ul::before{
-	border-color:  #FFAA4C;
+	border-color:  #FFD523;
 }
 
 a:link, a:visited  {
@@ -360,12 +358,12 @@ a:link, a:visited  {
   padding: 0.5rem;
   border-radius: 25px;
   background: #B2B1B9;
-  border: 1px solid #FFAA4C;
+  border: 1px solid #FFD523;
   margin: 3px;
 }
 
 .learning-option-button:hover {
-  background-color: #FFAA4C;
+  background-color: #FFD523;
   color: black;
 }
 
@@ -374,11 +372,11 @@ a:link, a:visited  {
 }
 
 .react-chatbot-kit-chat-bot-message {
-  background-color: #FFAA4C !important;
+  background-color: #FFD523 !important;
   color: black !important;
 }
 .react-chatbot-kit-chat-bot-message-arrow {
-  border-right: 8px solid #FFAA4C !important;
+  border-right: 8px solid #FFD523 !important;
 }
 .react-chatbot-kit-chat-bot-message-container {
   color: #001E6C !important;
@@ -388,7 +386,7 @@ a:link, a:visited  {
   background-color: #001E6C !important;
 }
 .react-chatbot-kit-chat-btn-send {
-  background-color: #FFAA4C !important;
+  background-color: #FFD523 !important;
 
 }
 
@@ -401,7 +399,7 @@ a:link, a:visited  {
   align-items: center;
   font-size: 1rem;
   background-color: #001E6C;
-  color: #FFAA4C;
+  color: #FFD523;
   margin-right: 15px;
 }
 
@@ -427,7 +425,7 @@ body{
 }
 
 .border-yellow{
-  border: solid 2px #FFAA4C;
+  border: solid 2px #FFD523;
   border-radius: 15px;
   margin: 2%;
   width: 400px;
@@ -440,16 +438,16 @@ body{
   background-color: black;
   color: white;
   margin: 4px;
-  border: solid 2px #FFAA4C ;
+  border: solid 2px #FFD523 ;
 }
 
 .button-change-yellow:hover{
-  background-color: #F037A5;
+  background-color: #FFD523;
   color : black;
 }
 
 .button-clicked{
-  background-color: #FFAA4C !important;
+  background-color: #FFD523 !important;
   color : black !important;
 }
 
@@ -466,14 +464,14 @@ body{
 }
 
 .footer-link:hover{
-  color: #FFAA4C !important;
+  color: #FFD523 !important;
 }
 .div-skills{
   text-align: center;
 }
 
 .skills{
-  background-color: #2D46B9;
+  background-color: #0e112596;
   display: inline-block;
   width: 170px;
   height: 50px;
@@ -484,8 +482,8 @@ body{
 }
 
 .skills:hover{
-  background-color: #F037A5;
-  color: black;
+  background-color: #09177996;
+  color: white
 }
 
 
@@ -494,11 +492,7 @@ body{
   margin-bottom: 20px;
 }
 
-.gradient-color{
-  background: -webkit-linear-gradient(#7F23FF, #FF00BD, #FF007B, #FF7D4B, #FFC240, #F9F871);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+
 
 .Hi-home-page{
 
@@ -506,6 +500,7 @@ body{
   display: inline-block;
   margin-right: 20px;
   font-size: 8em;
+  color: #FFD523;
 }
 .first-line-home{
   display: inline-block;
@@ -533,9 +528,11 @@ body{
 }
 
 .link_here_home{
-  color: #FFAA4C;
+  color: #FFD523;
 }
-
+.link_here_home:hover{
+  color: #FFD523;
+}
 
 
 .background-image{
@@ -572,7 +569,7 @@ body{
 .chat-icon:hover{
   font-size: 4em;
   padding-bottom: 100px;
-  color: #FFAA4C;
+  color: #FFD523;
 }
 .chat-icon{
   padding : 15px;
@@ -585,7 +582,7 @@ body{
   width: 100px;
   height: 100px;
   margin: 4px;
-  color: #FFAA4C;
+  color: #FFD523;
   font-size: 3em;
   position: 'absolute';
   left: '50%';
@@ -602,14 +599,14 @@ body{
 }
 
 .accordion-item:hover{
-  background-color: #F037A5;
-  color: black;
+  background-color: #09177996;
+  color: white;
 }
 
 .accordion-item{
   width: 300px;
   text-align: center;
-  background-color: #2D46B9;
+  background-color: #0e112596;
   margin: 1em;
   border-radius: 1em;
 }
@@ -691,7 +688,7 @@ body{
   max-width: 400px;
   width:100%;
   height:auto;
-  border: solid .1em #FFAA4C;
+  border: solid .1em #FFD523;
   border-radius: 2em;
   margin:1em;
 }
@@ -701,11 +698,35 @@ body{
   max-width: 400px;
   width:100%;
   height:auto;
-  border: solid .1em #FFAA4C;
+  border: solid .1em #FFD523;
   border-radius: 2em;
   margin:1em;
 }
 
 .resume-backgroud{
   background-color: #2C2E43;
+}
+
+.hobbies-div-background{
+  background-color: #0e112596;
+  color: white;
+  max-width: 90%;
+  margin: auto;
+  border-radius: 1em;
+}
+
+.hobbies-div-background:hover{
+  background-color: #09177996;
+  color: white;
+}
+
+.bio-color{
+  background-color: #0e112596;
+  color: white;
+  margin: auto;
+  border-radius: 1em;
+}
+
+.bio-color:hover{
+  background-color: #09177996;
 }

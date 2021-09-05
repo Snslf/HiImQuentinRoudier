@@ -6,6 +6,7 @@ import {Helmet} from "react-helmet";
 import Header from "./Header";
 import FavoriteBooks from "./FavoriteBooks";
 import EntomologyTree from "./EntomologyTree";
+import StarfieldAnimation from 'react-starfield-animation'
 
 import Contacting from "./Contacting";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -221,89 +222,102 @@ function About() {
   };
   return (
     <div class = "myskills-margin background-image">
-
+      <StarfieldAnimation
+        numParticles={400}
+        style={{
+          position: 'fixed',
+          zIndex: 1,
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0
+        }}
+      />
       <Helmet>
         <meta charSet="utf-8" />
         <title>I'm Quentin Roudier</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <Header />
-
-      <div class="container padding width-page">
-        <div class="about-bio-container">
+      <div  class = "zIndex">
+        <div class="container padding width-page bio-color">
+          <div class="about-bio-container">
+            <div>
+              <img class="picture profilpicture"
+               src={me}
+               alt="My face, you really miss something :("/>
+            </div>
+            <div class = "about-bio-text">
+              <h3> I'm Quentin, a former robotics and mechatronics engineer who decided to work in IT.</h3>
+              <p> After obtaining my engineering degree at ESIEE-Amiens and a Research Master at the University of Technology of Compiegne, I worked on various subjects in different types of companies. It is during these experiences that I understood the part I enjoyed the most in engineering was coding.</p>
+              <p> Then, I began to code more on my free time, trying to improve my understanding and my coding logic in python, on websites such as CodeWars or Codingame. And when finally I get confident enough in my skills, I began doing  projects from scratch like the website you are using right now. I was quite surprised that I enjoyed it that much and this is the reason why I'm looking right now to work in IT as a software engineer or as a web developer.</p>
+            </div>
+          </div>
+        </div>
+        <hr class="home-hr"/>
+        <div class="hobbies-div-background">
+          <div class ="container padding width-page">
+            <h1 > Some of my Hobbies </h1>
+            <div class="hobbies-buttons-container">
+              <div class="hobbies-button">
+                {et === 1
+                  ? <button type="button" class="hobbies-button-width button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={EntoTree}><h4>Entomology</h4></button>
+                  : <button type="button" class="hobbies-button-width btn btn-dark button-change-yellow btn-lg btn-block" onClick={EntoTree}><h4>Entomology</h4></button>
+                }
+              </div>
+              <div class="hobbies-button">
+                {ast === 1
+                  ? <button type="button" class="hobbies-button-width button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={Astronomy} ><h4>Astronomy</h4></button>
+                  : <button type="button" class="hobbies-button-width btn btn-dark button-change-yellow btn-lg btn-block" onClick={Astronomy} ><h4>Astronomy</h4></button>
+                }
+              </div>
+              <div class="hobbies-button">
+                {bk === 1
+                  ? <button type="button" class="hobbies-button-width button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={Books}><h4>Reading</h4></button>
+                  : <button type="button" class="hobbies-button-width btn btn-dark button-change-yellow btn-lg btn-block" onClick={Books}><h4>Reading</h4></button>
+                }
+              </div>
+              <div class="hobbies-button">
+                {wm === 1
+                  ? <button type="button" class="hobbies-button-width button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={Wmap}><h4>Travel</h4></button>
+                  : <button type="button" class="hobbies-button-width btn btn-dark button-change-yellow btn-lg btn-block" onClick={Wmap}><h4>Travel</h4></button>
+                }
+              </div>
+            </div>
+          </div>
           <div>
-            <img class="picture profilpicture"
-             src={me}
-             alt="My face, you really miss something :("/>
-          </div>
-          <div class = "about-bio-text">
-            <h3> I'm Quentin, a former robotics and mechatronics engineer who decided to work in IT.</h3>
-            <p> After obtaining my engineering degree at ESIEE-Amiens and a Research Master at the University of Technology of Compiegne, I worked on various subjects in different types of companies. It is during these experiences that I understood the part I enjoyed the most in engineering was coding.</p>
-            <p> Then, I began to code more on my free time, trying to improve my understanding and my coding logic in python, on websites such as CodeWars or Codingame. And when finally I get confident enough in my skills, I began doing  projects from scratch like the website you are using right now. I was quite surprised that I enjoyed it that much and this is the reason why I'm looking right now to work in IT as a software engineer or as a web developer.</p>
-          </div>
-        </div>
-      </div>
-      <hr/>
-      <div class ="container padding width-page">
-        <h1 > Some of my Hobbies </h1>
-        <div class="hobbies-buttons-container">
-          <div class="hobbies-button">
-            {et === 1
-              ? <button type="button" class="hobbies-button-width button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={EntoTree}><h4>Entomology</h4></button>
-              : <button type="button" class="hobbies-button-width btn btn-dark button-change-yellow btn-lg btn-block" onClick={EntoTree}><h4>Entomology</h4></button>
-            }
-          </div>
-          <div class="hobbies-button">
-            {ast === 1
-              ? <button type="button" class="hobbies-button-width button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={Astronomy} ><h4>Astronomy</h4></button>
-              : <button type="button" class="hobbies-button-width btn btn-dark button-change-yellow btn-lg btn-block" onClick={Astronomy} ><h4>Astronomy</h4></button>
-            }
-          </div>
-          <div class="hobbies-button">
-            {bk === 1
-              ? <button type="button" class="hobbies-button-width button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={Books}><h4>Reading</h4></button>
-              : <button type="button" class="hobbies-button-width btn btn-dark button-change-yellow btn-lg btn-block" onClick={Books}><h4>Reading</h4></button>
-            }
-          </div>
-          <div class="hobbies-button">
-            {wm === 1
-              ? <button type="button" class="hobbies-button-width button-clicked btn btn-dark button-change-yellow btn-lg btn-block" onClick={Wmap}><h4>Travel</h4></button>
-              : <button type="button" class="hobbies-button-width btn btn-dark button-change-yellow btn-lg btn-block" onClick={Wmap}><h4>Travel</h4></button>
-            }
-          </div>
-        </div>
-      </div>
-      <div>
-        {et === 1 &&
-          <div class="tree-container">
-           <EntomologyTree/>
-          </div>
-        }
-          {bk === 1 &&
-             <FavoriteBooks/>
-          }
-          {wm === 1 &&
-            <div className="WorldMapClass" >
-             <WorldMap color="#FFD523" title=<h3>Where have I been ? Don't hesitate to go over the countries !</h3> size="responsive" data={data} borderColor="white" backgroundColor="#11ffee00;" frame = "True" strokeOpacity="5"/>
-            </div>
-          }
-          {ast === 1 &&
-             <div>
-              <div class = "Nasa-range-title-container">
-                <h4> {date1.getDate()}/{date1.getMonth()+1}/{date1.getYear()+1900} </h4>
-                <h4 for="customRange1" class="form-label">Choose the day on Mars</h4>
-                <h4> {date2.getDate()}/{date2.getMonth()+1}/{date2.getYear()+1900} </h4>
+            {et === 1 &&
+              <div class="tree-container">
+               <EntomologyTree/>
               </div>
-              <div class="slider-size">
-                <input type="range" class="form-range" min="0" max={days} id="customRange1" onChange={(event) => setrangeast(event.target.value)}/>
-              </div>
-              <NASAApi arg={date3}/>
-            </div>
-          }
+            }
+              {bk === 1 &&
+                 <FavoriteBooks/>
+              }
+              {wm === 1 &&
+                <div className="WorldMapClass" >
+                 <WorldMap color="#FFD523" title=<h3>Where have I been ? Don't hesitate to go over the countries !</h3> size="responsive" data={data} borderColor="white" backgroundColor="#11ffee00;" frame = "True" strokeOpacity="5"/>
+                </div>
+              }
+              {ast === 1 &&
+                 <div>
+                  <div class = "Nasa-range-title-container">
+                    <h4> {date1.getDate()}/{date1.getMonth()+1}/{date1.getYear()+1900} </h4>
+                    <h4 for="customRange1" class="form-label">Choose the day on Mars</h4>
+                    <h4> {date2.getDate()}/{date2.getMonth()+1}/{date2.getYear()+1900} </h4>
+                  </div>
+                  <div class="slider-size">
+                    <input type="range" class="form-range" min="0" max={days} id="customRange1" onChange={(event) => setrangeast(event.target.value)}/>
+                  </div>
+                  <NASAApi arg={date3}/>
+                </div>
+              }
+          </div>
+          <h4 class="padding align"> And coding of course but it seems obvious!</h4>
         </div>
-      <h4 class="padding align"> And coding of course but it seems obvious!</h4>
-      <hr/>
-      <Footer/>
+        <hr class="home-hr"/>
+        <Footer/>
+      </div>
     </div>
     );
 }

@@ -11,9 +11,9 @@ function Footer() {
   return (
     <footer className="slider-size smallpadding">
       <div>
-        <h6 className= "footer-link" href="/"> Home </h6>
-        <h6 className= "footer-link" href="/Resume"> Resume </h6>
-        <h6 className= "footer-link" href="/About"> About </h6>
+        <a className= "footer-link" href="/"> Home </a>
+        <a className= "footer-link" href="/Resume"> Resume </a>
+        <a className= "footer-link" href="/About"> About </a>
       </div>
       <div>
         <a className= "footer-link app-link" href="https://github.com/Snslf"><FontAwesomeIcon icon={faGithubSquare} /></a>

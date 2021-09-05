@@ -1,3 +1,16 @@
+
+
+.backgound-image{
+  background-image: url("C:\Users\quent\OneDrive\Bureau\Web dev\CV\my-app\src\components\images\background2.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.zIndex{
+  z-index: 20;
+}
+
 .Contact_form {
   background-color: #2C2E43;
   padding : 5px;
@@ -47,6 +60,7 @@
   cursor: pointer;
 }
 
+
 .underline-link{
   background:
     linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)),
@@ -82,15 +96,12 @@
   z-index: 10;
 }
 
-.chat-frame-form{
-
-}
 
 .chat-frame-chatbot{
   height:480px;
 }
 .cross-frame{
-  background-color: #595260;
+  background-color: #001E6C;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   width: 70px;
@@ -164,7 +175,7 @@
 
 
 .divcontent{
-  background-color: #595260;
+  background-color: #001E6C;
   border-radius:1em;
   width:90%;
   padding:2%;
@@ -175,7 +186,7 @@
   background-color: #AAAAAA;
 }
 .divcontent2:hover{
-  background-color: #FFD523;
+  background-color: #FFAA4C;
   color: black;
 }
 .divmap{
@@ -215,7 +226,7 @@
 
 
 .form-range{
-  background-color: black;
+  background-color: #2C2E43;
 }
 
 
@@ -264,7 +275,7 @@
 }
 
 .tree li:before {
-    outline: solid 1px #FFD523;
+    outline: solid 1px #FFAA4C;
     content: "";
     left: 0;
     position: absolute;
@@ -282,7 +293,7 @@
 
 .tree code,
 .tree a {
-    border: solid .1em #FFD523;
+    border: solid .1em #FFAA4C;
     border-radius: .2em;
     display: inline-block;
     margin: 0 .2em .5em;
@@ -293,7 +304,7 @@
 .tree ul:before,
 .tree code:before,
 .tree a:before {
-    outline: solid 1px #FFD523;
+    outline: solid 1px #FFAA4C;
     content: "";
     height: .5em;
     left: 50%;
@@ -321,20 +332,19 @@
 }
 .tree li a:hover,
 .tree li a:hover+ul li a {
-	background: #FFD523;
+	background: #FFAA4C;
   color: black;
-  border: 1px solid #FFD523;
+  border: 1px solid #FFAA4C;
 }
 
 .tree li a:hover + ul li::after,
 .tree li a:hover + ul li::before,
 .tree li a:hover + ul::before,
 .tree li a:hover + ul ul::before{
-	border-color:  #FFD523;
+	border-color:  #FFAA4C;
 }
 
 a:link, a:visited  {
-  color: #FFD523;
   background-color: transparent;
   text-decoration: none;
 }
@@ -350,12 +360,12 @@ a:link, a:visited  {
   padding: 0.5rem;
   border-radius: 25px;
   background: #B2B1B9;
-  border: 1px solid #FFD523;
+  border: 1px solid #FFAA4C;
   margin: 3px;
 }
 
 .learning-option-button:hover {
-  background-color: #FFD523;
+  background-color: #FFAA4C;
   color: black;
 }
 
@@ -364,21 +374,21 @@ a:link, a:visited  {
 }
 
 .react-chatbot-kit-chat-bot-message {
-  background-color: #FFD523 !important;
+  background-color: #FFAA4C !important;
   color: black !important;
 }
 .react-chatbot-kit-chat-bot-message-arrow {
-  border-right: 8px solid #FFD523 !important;
+  border-right: 8px solid #FFAA4C !important;
 }
 .react-chatbot-kit-chat-bot-message-container {
-  color: #595260 !important;
+  color: #001E6C !important;
 }
 .react-chatbot-kit-chat-header {
   color: white !important;
-  background-color: #595260 !important;
+  background-color: #001E6C !important;
 }
 .react-chatbot-kit-chat-btn-send {
-  background-color: #FFD523 !important;
+  background-color: #FFAA4C !important;
 
 }
 
@@ -390,8 +400,8 @@ a:link, a:visited  {
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  background-color: #595260;
-  color: #FFD523;
+  background-color: #001E6C;
+  color: #FFAA4C;
   margin-right: 15px;
 }
 
@@ -417,29 +427,29 @@ body{
 }
 
 .border-yellow{
-  border: solid 2px #FFD523;
+  border: solid 2px #FFAA4C;
   border-radius: 15px;
   margin: 2%;
   width: 400px;
   height: 400px;
 }
 .border-yellow:hover{
-  background-color: #595260;
+  background-color: #001E6C;
 }
 .button-yellow{
   background-color: black;
   color: white;
   margin: 4px;
-  border: solid 2px #FFD523 ;
+  border: solid 2px #FFAA4C ;
 }
 
 .button-change-yellow:hover{
-  background-color: #FFD523;
+  background-color: #F037A5;
   color : black;
 }
 
 .button-clicked{
-  background-color: #FFD523 !important;
+  background-color: #FFAA4C !important;
   color : black !important;
 }
 
@@ -447,7 +457,7 @@ body{
   display: inline-block;
   margin: 5px;
   font-size: 1.5em;
-  color: white;
+  color: white !important ;
   cursor: pointer;
 }
 
@@ -456,14 +466,14 @@ body{
 }
 
 .footer-link:hover{
-  color: #FFD523;
+  color: #FFAA4C !important;
 }
 .div-skills{
   text-align: center;
 }
 
 .skills{
-  background-color: #444444;
+  background-color: #2D46B9;
   display: inline-block;
   width: 170px;
   height: 50px;
@@ -474,7 +484,7 @@ body{
 }
 
 .skills:hover{
-  background-color: #FFD523;
+  background-color: #F037A5;
   color: black;
 }
 
@@ -484,8 +494,14 @@ body{
   margin-bottom: 20px;
 }
 
+.gradient-color{
+  background: -webkit-linear-gradient(#7F23FF, #FF00BD, #FF007B, #FF7D4B, #FFC240, #F9F871);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .Hi-home-page{
-  color: #FFD523;
+
   text-align: left;
   display: inline-block;
   margin-right: 20px;
@@ -517,12 +533,14 @@ body{
 }
 
 .link_here_home{
-  color: #FFD523;
+  color: #FFAA4C;
 }
 
+
+
 .background-image{
-  background-image: url("C:\Users\quent\OneDrive\Bureau\Web dev\CV\my-app\src\components\images\background.jpg");
-  background-size: auto 100%;
+  background-image: url("C:\Users\quent\OneDrive\Bureau\Web dev\CV\my-app\src\components\images\background2.jpg");
+  background-size: 100% auto;
   background-position: 50% 0px;
   background-repeat: no-repeat;
   max-width: 100%;
@@ -530,6 +548,21 @@ body{
   text-align: center;
   background-attachment: fixed;
 }
+
+@media (max-width: 1490px) {
+  .background-image{
+    background-image: url("C:\Users\quent\OneDrive\Bureau\Web dev\CV\my-app\src\components\images\background2.jpg");
+    background-size: auto 100%;
+    background-position: 50% 0px;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+    background-attachment: fixed;
+  }
+}
+
+
 
 .home-hr{
   width: 65%;
@@ -539,7 +572,7 @@ body{
 .chat-icon:hover{
   font-size: 4em;
   padding-bottom: 100px;
-  color: #FFD523;
+  color: #FFAA4C;
 }
 .chat-icon{
   padding : 15px;
@@ -552,7 +585,7 @@ body{
   width: 100px;
   height: 100px;
   margin: 4px;
-  color: #FFD523;
+  color: #FFAA4C;
   font-size: 3em;
   position: 'absolute';
   left: '50%';
@@ -569,14 +602,14 @@ body{
 }
 
 .accordion-item:hover{
-  background-color: #FFD523;
+  background-color: #F037A5;
   color: black;
 }
 
 .accordion-item{
   width: 300px;
   text-align: center;
-  background-color: #444444;
+  background-color: #2D46B9;
   margin: 1em;
   border-radius: 1em;
 }
@@ -658,7 +691,7 @@ body{
   max-width: 400px;
   width:100%;
   height:auto;
-  border: solid .1em #FFD523;
+  border: solid .1em #FFAA4C;
   border-radius: 2em;
   margin:1em;
 }
@@ -668,7 +701,11 @@ body{
   max-width: 400px;
   width:100%;
   height:auto;
-  border: solid .1em #FFD523;
+  border: solid .1em #FFAA4C;
   border-radius: 2em;
   margin:1em;
+}
+
+.resume-backgroud{
+  background-color: #2C2E43;
 }

@@ -6,6 +6,7 @@ import {Helmet} from "react-helmet";
 import Header from "./Header";
 import FavoriteBooks from "./FavoriteBooks";
 import EntomologyTree from "./EntomologyTree";
+
 import Contacting from "./Contacting";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight } from '@fortawesome/free-solid-svg-icons'
@@ -17,7 +18,6 @@ import chemcam from "./images/CHEMCAM.png";
 import mahli from "./images/MAHLI.png";
 import mardi from "./images/MARDI.png";
 import navcam from "./images/NAVCAM.png";
-
 
 
 
@@ -220,13 +220,15 @@ function About() {
     );
   };
   return (
-    <div class = "myskills-margin">
+    <div class = "myskills-margin background-image">
+
       <Helmet>
         <meta charSet="utf-8" />
         <title>I'm Quentin Roudier</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <Header />
+
       <div class="container padding width-page">
         <div class="about-bio-container">
           <div>
@@ -282,7 +284,7 @@ function About() {
           }
           {wm === 1 &&
             <div className="WorldMapClass" >
-             <WorldMap color="#FFD523" title=<h3>Where have I been ? Don't hesitate to go over the countries !</h3> size="responsive" data={data} borderColor="white" backgroundColor="black" frame = "True" strokeOpacity="1"/>
+             <WorldMap color="#FFD523" title=<h3>Where have I been ? Don't hesitate to go over the countries !</h3> size="responsive" data={data} borderColor="white" backgroundColor="#11ffee00;" frame = "True" strokeOpacity="5"/>
             </div>
           }
           {ast === 1 &&

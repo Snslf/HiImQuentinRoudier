@@ -28,7 +28,8 @@ import { faHtml5, faCss3Alt, faJsSquare, faReact, faNodeJs, faPython, faGitAlt }
 function Home() {
   const year = new Date().getFullYear();
   return (
-    <div>
+    <div class = "background-image">
+
       <Helmet>
         <meta charSet="utf-8" />
         <title>I'm Quentin Roudier</title>
@@ -87,7 +88,7 @@ function Home() {
                        height="500"
                        alt="The UTC logo"/>
                        <div class="according-item-header-components">
-                        <h4 > Consultant engineer as a mechatronics/Test developer at SII </h4>
+                        <h4 > Consultant IVV engineer / Python developer at SII for Thales and MBDA</h4>
                         <h5> Aug 2020 - Jul 2021 </h5>
                        </div>
                     </AccordionItemButton>
@@ -155,7 +156,7 @@ function Home() {
 
 
       <hr/>
-
+      <h1> Education </h1>
       <div >
         <Accordion class="resume-container" allowMultipleExpanded ="1" allowZeroExpanded="1">
           <AccordionItem  class="accordion-item">
